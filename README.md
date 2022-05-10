@@ -38,7 +38,7 @@ Visit our [website] for audio samples.
 
 1. Download our [published model]
 2. Download [mel-spectrograms]
-3. Generate audio `python3 inference.py -f <(ls mel_spectrograms/*.pt) -w waveglow_256channels.pt -o . --is_fp16 -s 0.6`  
+3. Generate audio `python3 inference.py -f <(ls mel_spectrograms/*.pt) -w models/waveglow_256channels_universal_v5.pt -o ./mel_spectrograms/rec --is_fp16 -s 0.6`  
 
 N.b. use `convert_model.py` to convert your older models to the current model
 with fused residual and skip connections.
@@ -73,7 +73,7 @@ with fused residual and skip connections.
 
    ```command
    ls *.pt > mel_files.txt
-   python3 inference.py -f mel_files.txt -w checkpoints/waveglow_10000 -o . --is_fp16 -s 0.6
+   python3 inference.py -f mel_files.txt -w checkpoints/waveglow_10000 -o . -s 0.6
    ```
 
 [//]: # (TODO)
